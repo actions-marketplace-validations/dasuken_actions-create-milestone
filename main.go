@@ -81,7 +81,7 @@ func (a *app) run(ctx context.Context) int {
 	// だとすれば分解してもいい気が、、、まとめた方が入力しやすいのかな
 	m, err := newMilestone(githubRepository, title, state, description, dueOn)
 	if err != nil {
-		fmt.Fprintf(a.errStream, "new milestone err: %v", err)
+		fmt.Fprintf(a.errStream, "%v", err)
 		return 1
 	}
 
