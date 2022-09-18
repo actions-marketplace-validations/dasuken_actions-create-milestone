@@ -1,17 +1,18 @@
 name: 'create milestone action'
-description: 'create milestone action'
+description: 'create a new milestone action'
 inputs:
   title:
     description: 'title'
     required: true
   state:
-    description: 'state'
+    description: 'state. either open or closed. Default: open'
     required: false
+    default: 'open'
   description:
     description: 'description'
     required: false
   due_on:
-    description: 'due_on'
+    description: 'This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ'
     required: false
 outputs:
   number: # id of output
