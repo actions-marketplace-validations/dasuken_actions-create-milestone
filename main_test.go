@@ -48,6 +48,7 @@ func Test_app_run(t *testing.T) {
 				"INPUT_DESCRIPTION": "v1.0.0 release",
 				"INPUT_DUE_ON":      "2021-05-10T21:43:54+09:00",
 			},
+			// mock https://docs.github.com/en/rest/issues/milestones#create-a-milestone
 			handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
 				w.WriteHeader(http.StatusCreated)
