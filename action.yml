@@ -1,0 +1,24 @@
+name: 'create milestone action'
+description: 'create milestone action'
+inputs:
+  title:
+    description: 'title'
+    required: true
+  state:
+    description: 'state'
+    required: false
+  description:
+    description: 'description'
+    required: false
+  due_on:
+    description: 'due_on'
+    required: false
+outputs:
+  number: # id of output
+    description: 'created milestone number'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'calender'
+  color: 'orange'
