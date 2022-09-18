@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: create milestone action
-        uses: ./ # Uses an action in the root directory
+        uses: dasuken/actions-create-milestone
         id: create_milestone
         with:
           title: 'v${{ github.run_id }}'
