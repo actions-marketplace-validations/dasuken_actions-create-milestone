@@ -1,0 +1,25 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: create milestone action
+        uses: ./ # Uses an action in the root directory
+        id: create_milestone
+        with:
+          title: 'v1'
+          state: 'open'
+          description: 'from github actions'
+          due_on: '2022-09-22T00:00:00+09:00'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      # Use the output from the `hello` step
+      - name: Get the output number
+        run: |
+          test '${{ steps.create_milestone.outputs.number }}' != ''
