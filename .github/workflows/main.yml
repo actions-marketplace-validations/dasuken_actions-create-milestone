@@ -16,7 +16,6 @@ jobs:
           title: 'v1'
           state: 'open'
           description: 'from github actions'
-          due_on: '2022-09-30T00:00:00+09:00'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       # Use the output from the `hello` step
